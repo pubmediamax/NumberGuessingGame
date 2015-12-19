@@ -1,6 +1,13 @@
 # This is a guess the number game.
 import sys
-import random
+import randoms
+
+if __name__ == "__main__":
+
+    while True:
+        playAgain():
+
+
 def playAgain():
         print('That was fun! Do you want to play again?')
         response=input()
@@ -16,7 +23,7 @@ def playAgain():
             sys.exit()
 
 while True:
-    secretNumber=random.randint(1,20)
+secretNumber=random.randint(1,20)
     print('I am thinking of a number between 1 and 20.')
     
     for guessesTaken in range(1,7):
@@ -31,9 +38,7 @@ while True:
                 break 
         except:
             print ('Try numbers, okay?')
-            continue
-
-  
+            continue  
     
     if guess==secretNumber:
        print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
@@ -42,4 +47,3 @@ while True:
     else:
        print('Nope. The number I was thinking of was ' + str(secretNumber))
        playAgain()   
-    
